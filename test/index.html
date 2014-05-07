@@ -12,34 +12,67 @@
 
       <h2 class="normal-columns">Normal columns</h2>
       <div class="normal-columns-container">
-        <div class="column"><span>because</span></div>
-        <div class="column"><span>fuck</span></div>
-        <div class="column"><span>designers</span></div>
+        <div class="column color blue"><span>because</span></div>
+        <div class="column color blue"><span>fuck</span></div>
+        <div class="column color blue"><span>designers</span></div>
       </div>
 
       <h2 class="multiline-columns">Multiline columns</h2>
       <div class="multiline-columns-container">
+        <div class="column color blue"><span>1</span></div>
+        <div class="column color blue"><span>2</span></div>
+        <div class="column color blue"><span>3</span></div>
+        <div class="column color blue"><span>4</span></div>
+        <div class="column color blue"><span>5</span></div>
+        <div class="column color blue"><span>6</span></div>
+        <div class="column color blue"><span>7</span></div>
+        <div class="column color blue"><span>8</span></div>
+        <div class="column color blue"><span>9</span></div>
+        <div class="column color blue"><span>10</span></div>
+      </div>
+
+      <h2 class="multiline-nested-columns">Multiline nested columns</h2>
+      <div class="multiline-nested-columns-container">
         <div class="column parent">
-          <div class="column"><span>1</span></div>
-          <div class="column"><span>2</span></div>
-          <div class="column"><span>3</span></div>
-          <div class="column"><span>4</span></div>
+          <div class="column parent">
+            <div class="sub-column color yellow"><span>2</span></div>
+            <div class="sub-column color yellow"><span>3</span></div>
+          </div>
+          <div class="column color orange"><span>2</span></div>
+          <div class="column color orange"><span>3</span></div>
+          <div class="column color orange"><span>4</span></div>
         </div>
-        <div class="column"><span>2</span></div>
-        <div class="column"><span>3</span></div>
-        <div class="column"><span>4</span></div>
-        <div class="column"><span>5</span></div>
-        <div class="column"><span>6</span></div>
-        <div class="column"><span>7</span></div>
-        <div class="column"><span>8</span></div>
-        <div class="column"><span>9</span></div>
-        <div class="column"><span>10</span></div>
+        <div class="column color blue"><span>2</span></div>
+        <div class="column color blue"><span>3</span></div>
+        <div class="column color blue"><span>4</span></div>
+        <div class="column color blue"><span>5</span></div>
+        <div class="column color blue"><span>6</span></div>
+        <div class="column color blue"><span>7</span></div>
       </div>
 
       <h2 class="unequal-columns">Unequal columns</h2>
       <div class="unequal-columns-container">
-        <div class="column long-column"><span>Long</span></div>
-        <div class="column short-column"><span>Short</span></div>
+        <div class="column long-column color blue"><span>Long</span></div>
+        <div class="column short-column color blue"><span>Short</span></div>
+      </div>
+
+      <h2 class="unequal-nested-columns">Unequal and nested columns</h2>
+      <div class="unequal-nested-columns-container">
+        <div class="column long-column color blue"><span>Long</span></div>
+        <div class="column short-column color blue"><span>Short</span></div>
+        <div class="column long-column parent">
+          <div class="column color orange"><span>Same as</span></div>
+          <div class="column color orange"><span>short but</span></div>
+          <div class="column color orange"><span>nested</span></div>
+          <div class="column parent">
+            <div class="column sub-column color yellow"><span>Nest</span></div>
+            <div class="column sub-column color yellow"><span>again</span></div>
+          </div>
+          <div class="column color orange"><span>nested</span></div>
+          <div class="column color orange"><span>nested</span></div>
+        </div>
+
+        <div class="column short-column color blue"><span>Short<br />and<br />taller</span></div>
       </div>
 
       <button id="start-test">Start test!</button>
