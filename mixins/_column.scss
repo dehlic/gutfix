@@ -1,0 +1,48 @@
+// Define a column.
+//
+// @param $percentage This parameter whould be in the form 'k of n', where k is
+//    how many columns this column is wide and n is the total number of colums.
+// @param $columns-in-a-row This parameter (a number) indicates how many 'real'
+//    columns the rows have. In this way the first element of every row can be
+//    cleared on the next line.
+// @param $parent This parameter indicates if this column is parent of others
+//    sub-columns. When != nil it is padding-free (delegating padding rules to
+//    its children)
+//
+// Usage:
+//    column(1 of 4)           // This column spans for the 25% of the width.
+//    column(1 of 5, 5)        // This is 20% wide, and the 5n+1 element is
+//                             // cleared to left
+//    column(1 of 5, 5, true)  // This is 20% wide, the 5n+1 element is
+//                             // cleared to left and it is padding-free (its
+//                             // children will have padding)
+
+@mixin column($percentage, $columns-in-a-row: nil, $parent: nil) {
+  // Extract two values from a single string (which is actually an array of 3
+  // values).
+  // 1 of 5 -> $single: 1, $full: 5
+  $single: nth($percentage, 1);
+  $full: nth($percentage, 3);
+
+  // Set float to left.
+  float: left;
+
+  // Set width as percentage.
+  width: percentage($single / $full);
+
+  // Apply the padding to non-parent elements or reset padding
+  @if $parent == nil {
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+  } @else {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  // Clear left the last element of every row
+  @if $columns-in-a-row != nil {
+    &:nth-child(#{$columns-in-a-row}n + 1) {
+      clear: left;
+    }
+  }
+}
