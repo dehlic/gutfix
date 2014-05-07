@@ -1,0 +1,22 @@
+{
+  "name": "gutfix",
+  "version": "0.0.0",
+  "authors": [
+    "Lucio Baglione <coire1@gmail.com>",
+    "Andrea Leopardi <an.leopardi@gmail.com>"
+  ],
+  "description": "A Sass semantic grid framework based on fixed gutter.",
+  "main": "_gutfix.scss",
+  "keywords": [
+    "sass",
+    "grid-framework"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dehlic/gutfix",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "gutfix",
+  "version": "0.0.0",
+  "description": "Gutfix is a Sass semantic grid framework based on fixed gutters.",
+  "main": "_gutfix.scss",
+  "devDependencies": {
+    "grunt": "",
+    "grunt-contrib-connect": "",
+    "grunt-contrib-sass": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dehlic/gutfix"
+  },
+  "keywords": [
+    "sass",
+    "grid-framework"
+  ],
+  "author": "Lucio Baglione <info@dehlic.com> (http://dehlic.com)",
+  "contributors": [
+    "Andrea Leopardi <an.leopardi@gmail.com> (https://github.com/whatyouhide)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dehlic/gutfix/issues"
+  },
+  "homepage": "https://github.com/dehlic/gutfix"
+}
