@@ -22,7 +22,7 @@
   // So I set the global $gutter value to local value and reset it
   // to previous value at the end of context
   $old-gutter: $gutter;
-  $gutter: $context-gutter !global;
+  $gutter: $context-gutter;
   @content;
-  $gutter: $old-gutter !global;
+  $gutter: $old-gutter;
 }
