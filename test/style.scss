@@ -108,6 +108,16 @@ div.multiline-columns-container {
     @include column(1 of 4, 4, yes);
     margin-bottom: 0px;
   }
+  @include with-gutter(8px) {
+    @media (max-width: 600px) {
+      & .column {
+        @include column(1 of 3, 3);
+      }
+      & .column.parent {
+        @include column(1 of 3, 3, yes);
+      }
+    }
+  }
 }
 
 div.multiline-nested-columns-container {
