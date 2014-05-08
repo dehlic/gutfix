@@ -88,8 +88,10 @@ div.normal-columns-container {
 
   & > div {
     @include column(1 of 3);
-    @include breakpoint(max-width 600px, 8px) {
-      @include column(1 of 2);
+    @include with-gutter(8px) {
+      @media (max-width: 600px) {
+        @include column(1 of 3);
+      }
     }
   }
 }
@@ -100,17 +102,11 @@ div.multiline-columns-container {
   & .column {
     @include column(1 of 4, 4);
     margin-bottom: 10px;
-    @include breakpoint(max-width 600px, 8px) {
-      @include column(1 of 3, 3);
-    }
   }
 
   & .column.parent {
     @include column(1 of 4, 4, yes);
     margin-bottom: 0px;
-    @include breakpoint(max-width 600px, 8px) {
-      @include column(1 of 3, 3, yes);
-    }
   }
 }
 
@@ -146,16 +142,15 @@ div.unequal-nested-columns-container {
   & > div.long-column {
     @include column(3 of 4, 2);
     margin-bottom: 10px;
-    // include breakpoint
-    @include breakpoint($mobile, 8px) {
-      @include column(3 of 5, 2);
+    // include with-gutter
+    @include with-gutter(8px) {
+      @media (max-width: 600px) {
+        @include column(3 of 5, 2);
+      }
     }
     &.parent {
       @include column(3 of 4, 2, true);
       margin-bottom: 0px;
-      @include breakpoint($mobile, 8px) {
-        @include column(3 of 5, 2, true);
-      }
       & > .column {
         @include column(1 of 3, 3);
         margin-bottom: 10px;
@@ -167,13 +162,31 @@ div.unequal-nested-columns-container {
           @include column(1 of 2, 2);
         }
       }
+      @include with-gutter(8px) {
+        @media (max-width: 600px) {
+          @include column(3 of 5, 2, true);
+          & > .column {
+            @include column(1 of 3, 3);
+            margin-bottom: 10px;
+            &.parent {
+              @include column(1 of 3, 3, true);
+              margin-bottom: 0px;
+            }
+            & > .column {
+              @include column(1 of 2, 2);
+            }
+          }
+        }
+      }
     }
   }
   & > div.short-column {
     @include column(1 of 4, 2);
     margin-bottom: 10px;
-    @include breakpoint($mobile, 8px) {
-      @include column(2 of 5, 2);
+    @include with-gutter(8px) {
+      @media (max-width: 600px) {
+        @include column(2 of 5, 2);
+      }
     }
   }
   margin-bottom: 50px;
